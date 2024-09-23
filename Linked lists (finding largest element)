@@ -1,0 +1,17 @@
+int large_value(List *head) {
+    if (head == NULL) {
+        // Return some indication that the list is empty
+        return -1; // or any other value that indicates "not found"
+    }
+
+    int max = head->data; // Initialize max with the first element
+    List *current = head->next; // Start with the second node
+
+    while (current != NULL) {
+        if (current->data > max) {
+            max = current->data; // Update max if current data is greater
+        }
+        current = current->next; // Move to the next node
+    }
+      return max; // Return the maximum value found
+}
